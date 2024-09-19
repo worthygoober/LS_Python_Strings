@@ -25,34 +25,33 @@ reviews = [
 
 keywords = ["good", "excellent", "bad", "poor", "average"]
 
-review = reviews.split(",")
-print(review)
+for review in reviews:
+    for keyword in keywords:
+        print(keyword)
+        if keyword in review:
+            new_review = review.replace(keyword, keyword.upper())
+            print(new_review)
 
-     
+# def tally_count(reviews):
+#     pos_words = ["good", "excellent", "great", "awesome", "fantastic", "superb", "amazing"]
+#     neg_words = ["bad", "poor", "terrible", "horrible", "awful", "disappointing", "subpar"]
+#     pos_count = 0
+#     neg_count = 0
+#     for review in reviews:
+#         for pos_word in pos_words:
+#             pos_count += review.count(pos_word)
+#         for neg_word in neg_words:
+#             neg_count += review.count(neg_word)
+#     print(f"The number of positive words is: {pos_count}. The number of negative words is: {neg_count}") #make look pretty)
 
-
-
-
-
-
-
-
-
-
-
-#Task 2: Sentiment Tally
-
-#Develop a function that tallies the number of positive and negative words in each review.  
-# The function should return the total count of positive and negative words.
-    # positive_words = ["good", "excellent", "great", "awesome", "fantastic", "superb", "amazing"]
-    # negative_words = ["bad", "poor", "terrible", "horrible", "awful", "disappointing", "subpar"]
-
-
-
-
-#Task 3: Review Summary
-
-# Implement a script that takes the first 30 characters of a review and appends "…" to create a summary. 
-# Ensure that the summary does not cut off in the middle of a word.
-
-# Example: "This product is really good. I'm...",
+# tally_count(reviews)
+        
+# limit = 30
+# for review in reviews:
+#     summ_review = review[:limit]
+#     for character in review[limit:]:
+#         if character != " ":
+#             summ_review += character
+#         else:
+#             break
+#     print(summ_review + "...")
